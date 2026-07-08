@@ -1,0 +1,998 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+    min-width: 320px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: rgba(1, 1, 1, 0.6);
+    padding: 20px 5%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+header img {
+    width: min(160px, 20vw);
+}
+
+nav ul {
+    display: flex;
+    gap: 4.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    font-size: 1.6rem;
+    color: white;
+}
+
+.header-contact {
+    background-color: rgba(255, 113, 50, 1);
+    padding: 10px 20px;
+    border-radius: 10px 100px/120px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+/* Sección 1 - Hero */
+.div-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.div-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+
+.section1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 5% 50px;
+    position: relative;
+}
+
+.section1-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.section1-subtitle {
+    background-color: rgba(255, 113, 50, 1);
+    padding: 8px 25px;
+    border-radius: 10px 100px/120px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 2vh;
+}
+
+.feature-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Efecto en el título */
+.feature-card h4 {
+    transition: color 0.3s ease;
+}
+
+/* Animación para los iconos */
+.icon-container {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .icon-container {
+    transform: scale(1.1);
+}
+
+.main-icon {
+    transition: filter 0.3s ease;
+}
+
+.feature-card:hover .main-icon {
+    filter: brightness(1.2);
+}
+.newsletter-container:hover {
+    background-color: rgba(255, 113, 50, 1); /* Orange color on hover */
+    border-color: rgba(255, 113, 50, 1); /* Optional: change the border color to match */
+    cursor: pointer; /* Changes the cursor to indicate interactivity */
+    transition: background-color 0.5s ease; /* Smoot*/
+}
+
+.perlamar-img {
+    width: min(300px, 50vw);
+    margin-bottom: 3vh;
+}
+
+.section1-p1 {
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    line-height: 1;
+    color: white;
+    margin-bottom: 2vh;
+    font-weight: 700;
+}
+
+.section1-p2 {
+    font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+    color: white;
+    margin-bottom: 4vh;
+    font-weight: 400;
+}
+
+.section1 button {
+    background: transparent;
+    color: rgba(255, 113, 50, 1);
+    border: 3.5px solid rgba(255, 113, 50, 1);
+    padding: 15px 45px;
+    font-size: clamp(1.6rem, 2vw, 2rem);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Sección 2 - Características */
+.section2 {
+    background: white;
+    padding: 8rem 5%;
+    position: relative;
+    z-index: 2;
+}
+
+.section2 h3 {
+    font-size: clamp(3rem, 4.5vw, 4.5rem);
+    color: #333;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.section2 h3 span {
+    color: rgba(255, 113, 50, 1);
+}
+
+.section2-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+.feature-card h4 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    color: #6C6C6C;
+    margin: 1.5rem 0;
+}
+
+
+/* Estilos para el contador +20 */
+.counter-container {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.counter {
+    font-size: 6rem;
+    color: rgba(255, 113, 50, 1);
+    font-weight: 700;
+    display: block;
+}
+
+.counter-text {
+    font-size: 2rem;
+    color: #333;
+
+    letter-spacing: 2px;
+}
+
+.icon-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagen de fondo (marco) */
+.icon-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Icono principal */
+.main-icon {
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    height: auto;
+}
+
+/* Eliminar estilos anteriores */
+.second, .secondtwo {
+    all: unset;
+}
+/* ===== SECCIÓN 3 - DISEÑO MODERNO ===== */
+/* ===== SECCIÓN 3 - DISEÑO CORREGIDO ===== */
+.section3 {
+    position: relative;
+    margin-top: -1px; /* Eliminar espacio entre secciones */
+}
+
+.section3-container {
+    display: flex;
+    min-height: 600px; /* Altura mínima según diseño */
+    flex-wrap: wrap; /* Permite que los elementos se acomoden cuando se reduce el tamaño */
+    
+}
+
+/* Contenedor de imagen (50% ancho) */
+.section3-image {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.section3-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Contenedor de contenido (50% ancho) */
+.section3-content {
+    flex: 0 0 50%;
+    background: rgba(255, 113, 50, 1);
+    padding: 8rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.content-wrapper {
+    max-width: 500px;
+    color: white;
+}
+
+.section3-content h2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+.build{
+    font-weight: bolder;
+    font-size: 3.9rem;
+}
+
+.section3-content p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.section3-cta {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 1.2rem 3.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 10px 100px / 120px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* ===== SECCIÓN 4 - NEWSLETTER ===== */
+.section4 {
+    width: 100%;
+
+    height: 100%; /* Keep this or adjust based on content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 5%; /* Added padding for more space on top and bottom */
+}
+
+.newsletter-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+
+    background: #6C6C6C;
+    border-radius: 30px;
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    padding: 3rem;
+}
+
+.newsletter-content h3 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-content .subtitle {
+    font-size: 2.3rem;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.newsletter-form input {
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.newsletter-form button {
+    background: rgba(255, 113, 50, 1);
+    color: white;
+    border: none;
+    padding: 1.5rem 4rem;
+    font-size: 1.8rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 1400px) { 
+    .newsletter-container {
+        width: 90%;
+        padding: 3rem;
+    }
+    
+    .newsletter-content h3 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .newsletter-content h3 {
+        font-size: 3rem;
+    }
+    
+    .newsletter-form input {
+        font-size: 1.6rem;
+        padding: 1.2rem;
+    }
+}
+
+.newsletter-form button:hover {
+    background-color: #e66e00;
+}
+
+/* Footer styles */
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 4rem 5% 2rem;
+    font-size: 1.4rem;
+}
+
+.footer-content {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+/* Contenedor logo + texto + redes sociales */
+.footer-logo {
+    flex: 1 1 300px;
+    min-width: 250px;
+}
+
+.footer-logo img {
+    width: 200px;
+    margin-bottom: 2rem;
+}
+
+.footer-logo p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #ccc;
+    max-width: 400px;
+}
+
+/* Contenedor columnas (Recursos + Soporte) */
+.footer-links {
+    flex: 1 1 auto;
+    display: flex;
+    gap: 6rem;
+    justify-content: flex-end;
+}
+
+.footer-column h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #FF7F00;
+}
+
+/* Redes sociales al lado del texto */
+.footer-social {
+    display: flex;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+.header-contact a {
+    text-decoration: none;
+    color: inherit; /* Esto hace que el enlace tenga el mismo color que el texto original */
+}
+
+.meet-contact a{
+    text-decoration: none;
+    color: inherit; 
+}
+
+.footer-social .social-icon img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social .social-icon:hover img {
+    transform: translateY(-3px);
+}
+hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Línea y copyright */
+
+
+.footer-bottom p {
+    font-size: 1.4rem;
+    color: #888;
+    text-align: left;
+}
+/* Añade estos estilos */
+.counter-container {
+    text-align: center; /* Centrado permanente como respaldo */
+  }
+.section3-content{
+    margin-top: -0.3rem;
+}
+  
+
+
+@media (min-width: 340px) and (max-width: 787px) {
+    .footer {
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos se apilen */
+        align-items: center; /* Centra todos los elementos */
+        text-align: center; /* Centra el texto */
+    }
+
+    .footer-logo {
+        text-align: center; /* Centra el logo dentro del footer */
+        margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+        margin: 0 auto;
+        width: 200px; /* Ajusta el tamaño de la imagen si es necesario */
+    }
+    .footer-logo p {
+        margin: 0 auto;
+        width: 200px; /* Ajusta el tamaño de la imagen si es necesario */
+    }
+
+
+    .footer-links {
+        display: flex;
+        flex-direction: column; /* Apilar los enlaces verticalmente */
+        align-items: center; /* Centra los enlaces */
+    }
+    .footer-links {
+        gap: 4rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-column ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer-column ul li a {
+        color: #ccc;
+        font-size: 1.4rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-social {
+        display: flex;
+        flex-direction: row; /* Distribuir las redes sociales en fila */
+        gap: 2rem; /* Espaciado entre iconos */
+        justify-content: center; /* Centra los iconos */
+        margin-top: 2rem;
+    }
+
+    .footer-social .social-icon img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-social .social-icon:hover img {
+        transform: translateY(-3px);
+    }
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-links {
+        gap: 4rem;
+        flex-wrap: wrap;
+    }
+    
+    .footer-logo,
+    .footer-links {
+        flex: 1 1 100%;
+    }
+    
+    .footer-social {
+        justify-content: flex-start;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .section3-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .section3-image,
+    .section3-content {
+        flex: 1;
+        width: 100%;
+    }
+    
+    .section3-image {
+        height: 400px;
+    }
+    
+    .section3-content {
+        padding: 5rem 3rem;
+    }
+    
+    .content-wrapper {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section3-content h2 {
+        font-size: 2.8rem;
+    }
+    
+    .section3-content p {
+        font-size: 1.6rem;
+    }
+}
+
+/* Añade este código al final de tu CSS */
+@media (min-width: 500px) and (max-width: 640px) {
+    header {
+      padding: 15px 5%;
+      gap: 25px;
+      flex-wrap: nowrap;
+    }
+  
+    header img {
+      width: 110px !important;
+      margin-right: auto; /* Empuja el logo a la izquierda */
+    }
+  
+    nav ul {
+      gap: 3rem !important;
+      flex-wrap: nowrap;
+      margin-left: auto; /* Empuja el menú a la derecha */
+    }
+  
+    .header-contact {
+      padding: 8px 18px;
+    }
+  
+    nav ul li {
+      font-size: 1.5rem !important;
+    }
+  }
+
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    position: relative;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 113, 50, 0.8);
+    border: none;
+    color: white;
+    font-size: 4rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s ease;
+}
+
+
+.carousel-arrow.prev {
+    left: 40px;
+}
+
+.carousel-arrow.next {
+    right: 20px;
+}
+
+/* Añade estos estilos al CSS existente */
+.carousel-slide .section1-div {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.carousel-slide .section1-p1,
+.carousel-slide .section1-p2 {
+    text-align: center !important;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Asegurar que el contenedor del texto mantenga su alineación */
+.section1-div {
+    position: relative;
+    z-index: 2;
+}
+
+/* Corrección para móviles */
+@media (max-width: 768px) {
+    .carousel-slide .section1-p1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2;
+    }
+    
+    .carousel-slide .section1-p2 {
+        font-size: 1.6rem !important;
+    }
+}
+/* Añade estos estilos al final de tu CSS */
+@media (min-width: 1200px) {
+    .carousel-slide .section1-div {
+      transform: translateX(-50%); /* Corrección de alineación */
+      left: 50%;
+      position: relative;
+      max-width: 1400px;
+      padding: 0 20px;
+    }
+  
+    .section1-p1,
+    .section1-p2 {
+      width: 100% !important;
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      left: 0 !important;
+    }
+  
+    .perlamar-img {
+      margin: 0 auto 3vh !important;
+      display: block !important;
+    }
+  }
+  
+  /* Corrección específica para 1342px */
+  @media (min-width: 1300px) and (max-width: 1440px) {
+    .carousel-slide .section1-div {
+      max-width: 1300px;
+      padding: 0 8%;
+    }
+  
+    .section1-p1 {
+      font-size: 5.5rem !important;
+      letter-spacing: -0.5px;
+    }
+  
+    .section1-p2 {
+      font-size: 3.2rem !important;
+    }
+  }
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent !important; /* Fondo transparente */
+    border: none !important; 
+    color: white !important; /* Color blanco */
+    font-size: 4rem !important; /* Tamaño aumentado */
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    font-weight: 300; /* Grosor de la flecha */
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sutil sombra para mejor contraste */
+    
+}
+
+
+.carousel-arrow:hover {
+    color: white !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Efecto hover sutil */
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Elimina cualquier estilo de borde residual */
+.carousel-arrow:focus {
+    outline: none;
+    box-shadow: none;
+}
+.carousel-arrow.prev {
+    left: 0;
+}
+
+.carousel-arrow.next {
+    right: 0;
+}
+
+#background-image {
+    transition: opacity 0.5s ease-in-out; /* Transición suave para el fondo */
+}
+
+.carousel-slide.active + .div-image img {
+    opacity: 1; /* Asegura que el fondo esté visible */
+}
+
+#background-image {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    opacity: 0;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+/* Capa oscura que cubre el fondo */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de fondo */
+    z-index: 1;
+}
+
+/* Asegura que el fondo ocupe toda la pantalla */
+.div-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* Transición suave para el fondo */
+#background-image {
+    transition: opacity 0.8s ease-in-out !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}/* Asegura que solo el slide activo sea visible */
+.carousel-slide {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+@media (min-width: 390px) and (max-width: 480px) {
+    .carousel-arrow {
+        transform: translateY(-50%);
+        top: 50% !important;
+        z-index: 1000; /* Asegura que estén sobre todo el contenido */
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .carousel-arrow.prev {
+        left: -100px !important; /* Distancia desde borde izquierdo */
+        right: -100px !important;
+        right: auto !important;
+    }
+
+    .carousel-arrow.next {
+        left: -100px !important; /* Distancia desde borde izquierdo */
+        right: -100px !important;
+        left: auto !important;
+    }
+
+    /* Ajuste de texto para evitar choques */
+    .section1-div {
+        padding: 0 55px !important; /* Margen para las flechas */
+        transform: translateY(20px); /* Bajar ligeramente el contenido */
+    }
+
+    .section1-p1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+}
+/* Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    .section1 {
+        padding: 80px 5% 30px;
+    }
+
+    .section1-p1 {
+        line-height: 1.1;
+    }
+
+    .section1-p2 {
+        margin-bottom: 3vh;
+    }
+
+    .section1 button {
+        padding: 12px 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section1-div {
+        gap: 1.5vh;
+    }
+
+    .section1 button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+

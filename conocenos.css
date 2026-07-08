@@ -1,0 +1,782 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+    min-width: 320px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+
+/* Header */
+header {
+    background-color: rgba(1, 1, 1, 0.6);
+    padding: 20px 5%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+header img {
+    width: min(160px, 20vw);
+}
+
+nav ul {
+    display: flex;
+    gap: 4.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    font-size: 1.6rem;
+    color: white;
+}
+
+.header-contact {
+    background-color: rgba(255, 113, 50, 1);
+    padding: 10px 20px;
+    border-radius: 10px 100px/120px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.header-contact a {
+    text-decoration: none;
+    color: inherit; /* Esto hace que el enlace tenga el mismo color que el texto original */
+}
+
+.meet-contact a{
+    text-decoration: none;
+    color: inherit; 
+}
+/* Sección 1 */
+.section1 {
+    background-color: #F1F1F1; /* Color de fondo gris claro */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 7rem;
+    color: #FF7F32; /* Naranja como en el diseño */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 2.15rem;
+    color: #555555; /* Gris oscuro para el texto */
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.left{
+    color: rgba(108, 108, 108, 1);
+}
+
+.projects{
+    font-weight: 700;
+}
+/* Estilos generales de la sección */
+/* Estilos generales de la sección */
+.seccion2 {
+    width: 100%;
+    background-color: #DCDCDC;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-box {
+    background-color: #555555;
+    padding: 25px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.icon-box img {
+    max-width: 80px;
+    height: 100px;
+}
+
+.subtitulo {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #6C6C6C;
+}
+
+/* Efectos hover solo en desktop */
+@media (hover: hover) {
+    .icon-item:hover .icon-box {
+        background-color: #FF7F32;
+        transform: scale(1.1);
+    }
+}
+@media (min-width: 390px) {
+    .icon-item:hover .icon-box {
+        background-color: #FF7F32;
+        transform: scale(1.1); /* El cuadro también se agranda */
+    }
+    
+    .icon-item:hover .icon-box img {
+        transform: scale(1.2); /* También aumenta el tamaño de la imagen */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        align-items: center;
+    }
+
+    
+    .icon-box {
+        width: 130px;
+        height: 130px;
+        padding: 20px;
+    }
+    
+    .icon-box img {
+        max-width: 60px;
+    }
+    
+    .icon-item {
+        width: 60%; /* Ajusta el tamaño de cada icon-item para pantallas pequeñas */
+        min-width: unset; /* Elimina el tamaño mínimo */
+    }   
+    
+    .subtitulo {
+        font-size: 2rem !important;  /* Aumenta el tamaño del texto */
+        margin-top: 1.5rem !important;  /* Asegura que el margen también se aplique */
+        margin-left: 3rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+    
+    .icon-box {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .icon-box img {
+        max-width: 50px;
+    }
+    
+    .subtitulo {
+        font-size: 1.4rem;
+    }
+}
+.seccion-mision-vision {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.mv-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center; /* Centra los contenedores de misión y visión en el eje vertical */
+    gap: 20px;
+}
+
+.mv-card {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido en el eje horizontal */
+    padding: 20px;
+}
+
+.mv-card1 {
+    background-color: white;
+}
+
+.mv-card2 {
+    background-color: #D9D9D9;
+    margin-top: -2rem;
+}
+
+.icon-text-container {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna para dispositivos pequeños */
+    align-items: center;
+    justify-content: center; /* Centra el contenido dentro de la caja */
+    gap: 20px; /* Ajusta el espacio entre icono y texto */
+    text-align: center;
+    width: 100%; /* Permite que el contenedor ocupe el 100% del ancho disponible */
+    padding: 0 10%; /* Da espacio lateral para que el texto no toque los bordes */
+    word-wrap: break-word; /* Evita que el texto se rompa de manera extraña */
+}
+
+
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.mv-icon {
+    flex-shrink: 0;
+}
+
+.mv-icon img {
+    width: 20rem;
+    height:30rem;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.text-content h2 {
+    color: rgba(0, 0, 0, 1);
+    font-size: 3rem;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.text-content p {
+    color: rgba(0, 0, 0, 1);
+    font-size: 2rem;
+    line-height: 1.6;
+    text-align: center; /* Centra el párrafo */
+}
+
+.mv-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 4rem 5% 2rem;
+    font-size: 1.4rem;
+}
+
+.footer-content {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+/* Contenedor logo + texto + redes sociales */
+.footer-logo {
+    flex: 1 1 300px;
+    min-width: 250px;
+}
+
+.footer-logo img {
+    width: 200px;
+    margin-bottom: 2rem;
+}
+
+.footer-logo p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #ccc;
+    max-width: 400px;
+}
+
+/* Contenedor columnas (Recursos + Soporte) */
+.footer-links {
+    flex: 1 1 auto;
+    display: flex;
+    gap: 6rem;
+    justify-content: flex-end;
+}
+
+.footer-column h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #FF7F00;
+}
+
+/* Redes sociales al lado del texto */
+.footer-social {
+    display: flex;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+.header-contact a {
+    text-decoration: none;
+    color: inherit; /* Esto hace que el enlace tenga el mismo color que el texto original */
+}
+
+.meet-contact a{
+    text-decoration: none;
+    color: inherit; 
+}
+
+.footer-social .social-icon img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social .social-icon:hover img {
+    transform: translateY(-3px);
+}
+hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Línea y copyright */
+
+
+.footer-bottom p {
+    font-size: 1.4rem;
+    color: #888;
+    text-align: left;
+}
+
+@media (min-width: 386px) and (max-width: 787px) {
+    .footer {
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos se apilen */
+        align-items: center; /* Centra todos los elementos */
+        text-align: center; /* Centra el texto */
+    }
+
+    .footer-logo {
+        text-align: center; /* Centra el logo dentro del footer */
+        margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+        margin: 0 auto;
+        width: 200px; /* Ajusta el tamaño de la imagen si es necesario */
+    }
+    .footer-logo p {
+        margin: 0 auto;
+        width: 200px; /* Ajusta el tamaño de la imagen si es necesario */
+    }
+
+
+    .footer-links {
+        display: flex;
+        flex-direction: column; /* Apilar los enlaces verticalmente */
+        align-items: center; /* Centra los enlaces */
+    }
+    .footer-links {
+        gap: 4rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-column ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer-column ul li a {
+        color: #ccc;
+        font-size: 1.4rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-social {
+        display: flex;
+        flex-direction: row; /* Distribuir las redes sociales en fila */
+        gap: 2rem; /* Espaciado entre iconos */
+        justify-content: center; /* Centra los iconos */
+        margin-top: 2rem;
+    }
+
+    .footer-social .social-icon img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-social .social-icon:hover img {
+        transform: translateY(-3px);
+    }
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-links {
+        gap: 4rem;
+        flex-wrap: wrap;
+    }
+    
+    .footer-logo,
+    .footer-links {
+        flex: 1 1 100%;
+    }
+    
+    .footer-social {
+        justify-content: flex-start;
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .icon-text-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .mv-card {
+        padding: 50px 5%;
+    }
+    
+    .mv-icon img {
+        width: 150px;
+    }
+    
+    .text-content h2 {
+        font-size: 2.4rem;
+    }
+    
+    .text-content p {
+        font-size: 1.4rem;
+    }
+    
+    .reverse {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas más pequeñas */
+        gap: 20px;
+        justify-items: center; /* Centra los elementos dentro del contenedor */
+        width: 100%; /* Hace que el contenedor ocupe todo el espacio disponible */
+        margin: 0 auto; /* Asegura que todo esté centrado */
+    }
+
+    .icon-item {
+        flex-direction: column;
+        width: 100%; /* Asegura que ocupe todo el espacio disponible en pantallas pequeñas */
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .icon-box {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .icon-box img {
+        max-width: 50px;
+    }
+
+    .subtitulo {
+        font-size: 1.6rem;
+    }
+}@media (max-width: 390px) {
+    .container {
+        width: 100%; /* Asegura que la sección ocupe todo el espacio */
+        padding: 0 20px; /* Da un poco de espacio lateral */
+    }
+    
+    .icon-item {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon-box {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto; /* Asegura que las cajas estén centradas */
+    }
+
+    .subtitulo {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+}
+
+/* Añade estos estilos al final de tu CSS */
+
+/* Añade estos estilos al CSS existente */
+
+/* Ajustes generales para header */
+@media (max-width: 500px) {
+    header {
+      padding: 15px 5%;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    nav ul {
+      gap: 1.5rem !important;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .header-contact {
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+  }
+  
+  /* Ajustes específicos para sección 1 */
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 5rem !important;
+      word-break: keep-all;
+      line-height: 1.1;
+    }
+    
+    .section-description {
+      font-size: 1.8rem !important;
+      padding: 0 10px;
+    }
+  }
+  
+  /* Corrección para alineación de iconos */
+  @media (min-width: 390px) {
+
+    .seccion2 .container {
+      gap: 15px;
+      padding: 0 5px;
+    }
+    
+    .icon-item {
+      width: 100% !important;
+      margin: 0 auto;
+    }
+    
+    .subtitulo {
+      font-size: 1.6rem !important;
+      margin-left: 0 !important;
+      padding: 0 10px;
+    }
+  }
+  
+  /* Asegurar contenedores principales */
+  header, .section1, .seccion2 {
+    box-sizing: border-box;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  /* Añade este código al CSS */
+@media (min-width: 390px) and (max-width: 500px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 15px 5%;
+    }
+  
+    header img {
+      width: 180px !important;
+      order: -1; /* Mueve el logo arriba del menú */
+    }
+  
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem !important;
+    }
+  }
+  
+  @media (max-width: 389px) {
+    header {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    header img {
+      width: 140px !important;
+      margin: 0 auto;
+    }
+  }
+  /* Añade este código al final de tu CSS */
+@media (min-width: 500px) and (max-width: 640px) {
+    header {
+      padding: 15px 5%;
+      gap: 25px;
+      flex-wrap: nowrap;
+    }
+  
+    header img {
+      width: 140px !important;
+      margin-right: auto; /* Empuja el logo a la izquierda */
+    }
+  
+    nav ul {
+      gap: 3rem !important;
+      flex-wrap: nowrap;
+      margin-left: auto; /* Empuja el menú a la derecha */
+    }
+  
+    .header-contact {
+      padding: 8px 18px;
+    }
+  
+    nav ul li {
+      font-size: 1.5rem !important;
+    }
+  }
+  /* Añade este código al final de tu CSS */
+@media (min-width: 500px) and (max-width: 640px) {
+    header {
+      overflow-x: hidden; /* Previene desbordamientos */
+      width: 100vw; /* Fuerza el ancho completo */
+      left: 0;
+      margin: 0;
+      padding: 15px 3% !important; /* Reduce el padding lateral */
+    }
+  
+    nav ul {
+      gap: 2rem !important; /* Reduce el espacio entre elementos */
+    }
+  
+    .header-contact {
+      padding: 8px 15px !important; /* Ajusta el botón de contacto */
+    }
+  
+    /* Asegura que el logo no colapse */
+    header img {
+      width: 130px !important;
+      min-width: 130px; /* Evita que se encoja más */
+    }
+  }
+  
+  /* Corrección adicional para el rango crítico */
+  @media (min-width: 501px) and (max-width: 513px) {
+    header {
+      padding: 15px 2% !important;
+    }
+    
+    nav ul li {
+      font-size: 1.4rem !important; /* Reduce ligeramente el texto */
+    }
+}
+/* Añade este código al final de tu CSS */
+@media (min-width: 769px) and (max-width: 894px) {
+    .seccion2 .container {
+      grid-template-columns: repeat(4, minmax(120px, 1fr)) !important; /* 4 columnas forzadas */
+      gap: 15px !important;
+      max-width: 100% !important;
+      padding: 0 5%;
+    }
+  
+    .icon-box {
+      width: 120px !important;
+      height: 120px !important;
+    }
+  
+    .subtitulo {
+      font-size: 1.6rem !important;
+      white-space: nowrap; /* Evita saltos de línea */
+    }
+  }
+  
+  /* Ajuste fino para 768-850px */
+  @media (min-width: 768px) and (max-width: 850px) {
+    .seccion2 .container {
+      grid-template-columns: repeat(4, 25%) !important; /* Distribución exacta */
+      justify-content: center;
+    }
+    
+    .icon-item {
+      transform: scale(0.9); /* Reducción proporcional */
+    }
+  }
+  @media (min-width: 768px) {
+    /* Para el contenedor icono + texto */
+    .mv-card1 .icon-text-container {
+      flex-direction: row; /* Cambia la dirección a fila */
+      text-align: left;    /* Alinea texto a la izquierda */
+      gap: 40px;           /* Espacio entre icono y texto */
+      align-items: center; /* Centrar verticalmente icono y texto */
+    }
+  
+    /* Ajuste del tamaño de la imagen para que no se vea muy grande */
+  
+    /* Ajuste del texto para que se alinee a la izquierda */
+    .mv-card1 .text-content h2,
+    .mv-card1 .text-content p {
+      text-align: left;
+    }
+  }
+
+  @media(min-width: 768px) and (max-width:894px){
+    .icon-box img{
+        width: 60px;
+    }
+
+  }
