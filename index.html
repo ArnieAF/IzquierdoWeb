@@ -241,36 +241,45 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Selecciona los slides DENTRO del contenedor .carousel-slides
             const slides = document.querySelectorAll(".carousel-slides .carousel-slide");
             const bgImage = document.getElementById("background-image");
             const prevButton = document.querySelector(".prev");
             const nextButton = document.querySelector(".next");
 
+            // Rutas de fondo correspondientes a cada slide (0 = Perlamar, 1 = Cipreses)
+            const bgUrls = [
+                "src/assets/images/Rectangle 9.jpg",
+                "src/assets/images/Rectangle 11.jpg"
+            ];
+
+            let currentIndex = 0;
+
             // Función para cambiar slide y fondo
-            function switchSlide(targetSlide, bgUrl) {
+            function switchSlide(index) {
                 // 1. Desactivar todos los slides
                 slides.forEach((slide) => slide.classList.remove("active"));
 
                 // 2. Activar el slide seleccionado
-                targetSlide.classList.add("active");
+                slides[index].classList.add("active");
 
                 // 3. Animación del fondo
                 bgImage.style.opacity = 0;
                 setTimeout(() => {
-                    bgImage.src = bgUrl;
+                    bgImage.src = bgUrls[index];
                     bgImage.style.opacity = 1;
                 }, 500);
             }
 
-            // Flecha IZQUIERDA -> CIPRESES (Slide 2)
+            // Flecha IZQUIERDA (Anterior)
             prevButton.addEventListener("click", () => {
-                switchSlide(slides[1], "src/assets/images/Rectangle 11.jpg");
+                currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+                switchSlide(currentIndex);
             });
 
-            // Flecha DERECHA -> PERLAMAR (Slide 1)
+            // Flecha DERECHA (Siguiente)
             nextButton.addEventListener("click", () => {
-                switchSlide(slides[0], "src/assets/images/Rectangle 9.jpg");
+                currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+                switchSlide(currentIndex);
             });
         });
     </script>
