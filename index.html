@@ -177,7 +177,10 @@
                         class="newsletter-form"
                         type="email"
                         id="email"
+                        name="email"
+                        required
                         placeholder="Ingresa tu correo electrónico" />
+                    <button type="submit" id="submitBtn">Suscribirse</button>
                 </form>
                 <p id="responseMessage"></p>
                 <!-- Elemento para mostrar mensajes de respuesta -->
@@ -281,6 +284,45 @@
                 currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
                 switchSlide(currentIndex);
             });
+        });
+    </script>
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("jp_ZSzE-o9Vi7Br2E");
+        })();
+
+        document.getElementById("newsletterForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita que la página se recargue
+
+            const btn = document.getElementById("submitBtn");
+            const responseMsg = document.getElementById("responseMessage");
+            const emailInput = document.getElementById("email");
+
+            btn.innerText = "Enviando...";
+            responseMsg.innerText = "";
+
+            // Variables a enviar (deben coincidir con las variables en tu plantilla de EmailJS, ej: {{email}})
+            const templateParams = {
+                email: emailInput.value
+            };
+
+            // Reemplaza los IDs con los correctos si "service_awium 14" tenía un guion bajo
+            emailjs.send("service_awium14", "template_0gw0q7a", templateParams)
+                .then(function(response) {
+                    btn.innerText = "Suscribirse";
+                    emailInput.value = ""; // Limpiar campo
+                    responseMsg.style.color = "white"; // Color del texto de éxito
+                    responseMsg.style.marginTop = "15px";
+                    responseMsg.innerText = "¡Suscripción exitosa! Revisa tu correo.";
+                }, function(error) {
+                    btn.innerText = "Suscribirse";
+                    responseMsg.style.color = "#ff6b6b"; // Color de error
+                    responseMsg.style.marginTop = "15px";
+                    responseMsg.innerText = "Hubo un error. Inténtalo de nuevo.";
+                    console.log("FAILED...", error);
+                });
         });
     </script>
 </body>
