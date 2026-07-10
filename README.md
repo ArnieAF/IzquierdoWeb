@@ -14,7 +14,7 @@ El objetivo principal es mostrar proyectos destacados como **Perlamar** y **Los 
 * **Carrusel Interactivo de Proyectos:** Presentación dinámica de los proyectos inmobiliarios en fase de lanzamiento.
 * **100% Responsive:** Adaptabilidad total a cualquier dispositivo (smartphones, tablets, laptops y pantallas grandes).
 * **Optimización SEO:** Estructura semántica de etiquetas HTML5 y metaetiquetas optimizadas para un mejor posicionamiento en motores de búsqueda.
-* **Navegación Intuitiva:** Menú de navegación claro con acceso directo a "Proyectos en venta", "Conócenos" y "Contacto".
+* **Navegación Intuitiva:** Menú de navegación claro con acceso directo a "Proyectos en venta", "Conócenos" y "Contacto"..
 
 ## 🛠️ Tecnologías Utilizadas
 
